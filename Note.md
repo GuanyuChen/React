@@ -21,3 +21,39 @@
 >List:有序可重复列表，对应于Array  
 >Set:无序且不可重复的列表  
 
+##2016/4/30
+###基本shell命令
+mkdir 新建路径
+    
+    $ mkdir dirname
+
+touch 新建文件
+
+    $ touch filename
+
+pwd 显示当前路径
+
+    $ pwd
+
+cat 显示文件内容
+
+    $ cat a.js
+
+rm 删除文件或目录
+
+    $ rm -r dir
+
+cp 文档的复制
+
+    $ cp file1 file2    文件file1复制成file2
+    $ cp -R dir1 dir2   复制整个路径
+
+mv 移动文件
+
+    $ mv file1 file2    文件file1更名为file2
+    $ mv file1 dir      文件file1移动到dir下
+
+grep 搜索
+
+    $ grep string file  在file中查找string
+
