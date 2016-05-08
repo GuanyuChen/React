@@ -1,10 +1,11 @@
 {
-  "name": "react",
+  "name": "react_prac",
   "version": "1.0.0",
   "description": "babel",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d build"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,16 @@
   "bugs": {
     "url": "https://github.com/GuanyuChen/React/issues"
   },
-  "homepage": "https://github.com/GuanyuChen/React#readme"
+  "homepage": "https://github.com/GuanyuChen/React#readme",
+  "devDependencies": {
+    "babel-plugin-transform-es2015-modules-umd": "^6.8.0",
+    "babel-plugin-transform-runtime": "^6.8.0",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-runtime": "^6.6.1"
+  },
+  "dependencies": {
+    "react": "^15.0.2",
+    "react-dom": "^15.0.2"
+  }
 }
