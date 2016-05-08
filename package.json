@@ -1,0 +1,25 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "babel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GuanyuChen/React.git"
+  },
+  "keywords": [
+    "babel"
+  ],
+  "author": "GuanyuChen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GuanyuChen/React/issues"
+  },
+  "homepage": "https://github.com/GuanyuChen/React#readme",
+  "devDependencies": {
+    "babel-cli": "^6.8.0"
+  }
+}
