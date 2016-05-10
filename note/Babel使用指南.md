@@ -162,6 +162,8 @@ Babel默认只转换新的JavaScript句法(syntax)，而不转换新的API，比
 
     $ npm install --save babel-polyfill     //安装
 
+**一定要导入** 
+
     import "babel-polyfill";                //在文件顶部导入polyfill
 
 #####babel-runtime
@@ -298,3 +300,14 @@ babel强大的功能实现依赖于层出不穷的 presets 和 plugins
 * babel-preset-react  (解析JSX语法)
 
 PS:每安装一个preset或plugin，一定要在.babelrc中更新配置
+
+**npm安装模块时要记得用管理员模式** ，不然很容易报错
+
+#####babel与gulp的结合
+
+下载:
+
+* `gulp`模块
+* `gulp-babel`模块
+
+在`package.json`中配置一下`scripts`
