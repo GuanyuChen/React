@@ -51,4 +51,40 @@
 		}]);
 		return DemoComponent;
 	}(_react.Component);
+
+	var Animal = function () {
+		function Animal(name) {
+			(0, _classCallCheck3.default)(this, Animal);
+
+			this.name = name;
+		}
+
+		(0, _createClass3.default)(Animal, [{
+			key: 'sayName',
+			value: function sayName() {
+				console.log('name=' + this.name);
+			}
+		}]);
+		return Animal;
+	}();
+
+	var Tiger = function (_Animal) {
+		(0, _inherits3.default)(Tiger, _Animal);
+
+		function Tiger(name) {
+			(0, _classCallCheck3.default)(this, Tiger);
+			return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Tiger).call(this, name));
+		}
+
+		(0, _createClass3.default)(Tiger, [{
+			key: 'programmer',
+			value: function programmer() {
+				console.log('imcoding');
+			}
+		}]);
+		return Tiger;
+	}(Animal);
+
+	var na = new Animal('dog'),
+	    cgy = new Tiger('cgy');
 });

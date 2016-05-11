@@ -69,8 +69,8 @@ ES5中继承由原型链来实现，ES6添加了对class的支持
 
 ####4.Enhanced Object Literals 增强的对象字面量
 
-* 可以在对象字面量里定义原型
-* 定义方法可以不用function关键字，直接调用父类方法 
+* 可以在对象字面量里定义原型,(\_\_proto\_\_属性来定义原型)
+* 定义方法可以不用function关键字，可以直接调用父类方法 
 
 与类的概念更加吻合
 
@@ -104,6 +104,9 @@ ES6中允许使用反引号来创建字符串，此种方法创建的字符串�
 
 ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，称为解构赋值.
 
+* 数组解构赋值需要模式匹配
+* 对象解构赋值需要属性名一致
+
 若一个函数要返回多个值，常规的做法是返回一个对象，将每一值作为对象的属性返回。在ES6中可以直接返回一个数组，进行解构赋值。
 
     var [x,y] = getVal(),   //函数返回值的解构 
@@ -121,7 +124,7 @@ ES6允许按照一定模式，从数组和对象中提取值，对变量进行�
 
 #####Default 默认参数值
 
-ES6支持在自定义函数时为参数赋默认值
+ES6支持在自定义函数时为参数赋默认值(容错处理)
 
     function sayHello(name) {
         //传统默认值
@@ -142,12 +145,13 @@ ES6支持在自定义函数时为参数赋默认值
     //rest 例子
     function restFunc(a,...rest) {
         console.log(a);
+        //当rest没传值时默认是一个空数组
         console.log(rest);
     }
 
-#####Spread 扩展操作符???这有问题
+#####Spread 扩展操作符
 
-允许传递数组或者类数组直接作为函数的参数而不用通过`apply`
+允许以拓展参数的形式(...rest )传递数组或者类数组直接作为函数的参数而不用通过`apply`
 
     var people = {'zf','john','nick'};
     
@@ -208,7 +212,7 @@ Proxy可以监听对象身上发生了什么事情，并在事情发生后执行
         }
     };
     
-    //创建代理以进行监听
+    //创建代理以进行监听,(参数：要监听的对象，处理函数)
     engineer = Proxy(engineer,interceptor);
     //做一些改动来触发代理
     engineer.salary = 60;   //控制台输出：salary changed to 60
@@ -330,7 +334,7 @@ ES6逐渐支持moudule 模块化。将不同功能的代码分别写在不同文
     var orgin = new Point(0,0);
     console.log(orgin);
 
-#####export
+#####export(导出模块里的东西)
 
     //demo1:简单使用方式
     export var firstName = 'hand';
@@ -349,7 +353,7 @@ ES6逐渐支持moudule 模块化。将不同功能的代码分别写在不同文
     function v2(){...}
     
     export {
-        v1 as streamV1,
+        v1 as streamV1, //as的作用是为变量取一个别名，相当于alias
         v2 as streamV2,
         v2 as streamLatestVersion
     };
@@ -383,11 +387,11 @@ ES6模块加载机制 与 CommonJS 模块的不同:
     //1
     import $ from 'jquery';
     //2
-    import {firstName,lastName,year} from './profile';
+    import {firstName,lastName,year} from './profile';  (解构赋值)
     //3
     import React,{Component,PropTypes} from 'react';
     //4
-    import * as React from 'react';
+    import * as React from 'react';     (as重新命名)
 
 
 
