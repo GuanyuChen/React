@@ -1,33 +1,34 @@
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
-    define(["babel-runtime/core-js/array/from", "babel-polyfill"], factory);
+    define(["babel-polyfill"], factory);
   } else if (typeof exports !== "undefined") {
-    factory(require("babel-runtime/core-js/array/from"), require("babel-polyfill"));
+    factory(require("babel-polyfill"));
   } else {
     var mod = {
       exports: {}
     };
-    factory(global.from, global.babelPolyfill);
+    factory(global.babelPolyfill);
     global.index = mod.exports;
   }
-})(this, function (_from) {
+})(this, function () {
   "use strict";
-
-  var _from2 = _interopRequireDefault(_from);
-
-  function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-      default: obj
-    };
-  }
 
   //想要使用ES6新的API 一定要引入这个
 
-  console.log((0, _from2.default)("aaaa"));
+  // demo 1
+  function f1() {
+    var n = 5;
+    if (true) {
+      var _n = 10;
+    }
+    console.log(n); // 5
+  }
 
-  var sum = function sum(x, y) {
-    return x + y;
-  };
-  var a = sum(1, 2);
-  console.log(a);
+  // demo 2
+  var PI = 3.1415;
+  console.log(PI); // 3.1415
+
+  f1();
+  // PI = 3;
+  // console.log(PI); // TypeError: "PI" is read-only
 });
