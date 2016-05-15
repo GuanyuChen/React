@@ -15,6 +15,10 @@
 
 	//想要使用ES6新的API 一定要引入这个
 
+	for (var i = 0; i < 10; i++) {
+		console.log(i + "hahaha");
+	}
+
 	var human = {
 		breath: function breath() {
 			//定义函数无需function关键字
@@ -29,4 +33,10 @@
 			console.log('working');
 		}
 	};
+
+	var add = function add(x, y) {
+		return console.log(x + y);
+	};
+
+	add(3, 4);
 });
