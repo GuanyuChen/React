@@ -66,7 +66,7 @@ webpack是一款强大的 **模块加载器兼打包工具** ，能把各种资�
 
     # 安装并保存在项目的依赖中
     $ npm install --save-dev webpack webpack-dev-server
-    # 如果想直接在命令行中使用webpack或webpack-dev-server命令，要全局安装
+    # 如果想直接在命令行中使用webpack或webpack-dev-server命令，要全局安装(如果安装在项目中，可以在package.json中配置相应的命令)
     $ npm install -g webpack webpack-dev-server
 
 创建webpack的配置文件
@@ -88,7 +88,7 @@ PS: **请注意`webpack.config.js`这个命名，默认情况下要严格按照�
         }
     }
 
-执行webpack命令
+执行webpack命令(只有全局安装才能在命令行中使用webpack命令，否则需要在`package.json`中配置`scripts`)
 
     $ webpack
 
@@ -107,7 +107,7 @@ build目录下也新增了一个bundle.js
     $ webpack --help
 
 * `webpack`  开发环境下编译
-* `webpack -p`  产品编译及压缩
+* `webpack -p`  产品编译及压缩(把代码进行压缩和混淆，一般用于产品发布)
 * `webpack --watch`  开发环境下持续的监听文件变动来进行编译(非常快)
 * `webpack -d`  引入source maps
 * `webpack --progress`  显示构建进度
@@ -116,7 +116,7 @@ build目录下也新增了一个bundle.js
 
 我们使用`webpack-dev-server`来起一个本地服务进行调试
 
-    $ webpack-dev-server --progress --colors --content-base build
+    $ webpack-dev-server --progress --colors --content-base build   //指向build目录
 
 打开`localhost:8080`,回车即可
 
@@ -132,6 +132,8 @@ build目录下也新增了一个bundle.js
 * `webpack-dev-server --port 3000` : 设置服务端口
 
 >关于webpack-dev-server的简单介绍：webpack-dev-server是一个小型的node.js Express服务器,它使用webpack-dev-middleware中间件来为通过webpack打包生成的资源文件提供Web服务。它还有一个通过Socket.IO连接着webpack-dev-server服务器的小型运行时程序。webpack-dev-server发送关于编译状态的消息到客户端，客户端根据消息作出响应。
+
+**PS:使用webpack-dev-server起一个服务不在本地产生一个新文件；使用webpack编译会产生新文件**
 
 #### 3.多文件入口
 
@@ -264,9 +266,7 @@ webpack-dev-server 后面的一串参数可以用`devServer`字段统一在`webp
 
 `npm run dev` 即可
 
-##### ???
-
-怎么mock数据呢，可以用proxy代理的方式
+怎么mock(模拟)数据呢，可以用proxy(代理)的方式
 
     var path = require('path');
     
