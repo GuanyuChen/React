@@ -12,10 +12,10 @@ webpack-dev-server 有两种模式支持自动刷新 `iframe`模式和`inline`�
 
 以下三种配置都可以实现页面的刷新效果
 
-    //1. 启动 webpack-dev-server 的时候带上inline参数
+    //1. 启动 webpack-dev-server 的时候带上inline参数(整个页面刷新)
     $ webpack-dev-server --inline
 
-    //2. 给HTML插入JS
+    //2. 给HTML插入JS(整个页面刷新)
     <script src="http://localhost:3000/webpack-dev-server.js"></script>
 
     //3. webpack配置
@@ -118,7 +118,7 @@ PS : 不使用`HotModuleReplaceMentPlugin`这个插件也可以，只需要在`w
         //使用这个plugin
         new HtmlWebpackPlugin({
             title: 'guanyu-react',
-            template: './src/index.html',
+            template: './src/index.html'
             })
     ]
 
